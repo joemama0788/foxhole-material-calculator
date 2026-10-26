@@ -1890,6 +1890,66 @@ body.modal-open {
   color: var(--amber);
 }
 
+/* Ko-fi 捐赠 */
+.kofi {
+  margin-top: 22px;
+  padding: 16px 18px;
+  border: 1px solid rgba(255, 94, 91, 0.45);
+  border-radius: var(--radius);
+  background: linear-gradient(180deg, rgba(255, 94, 91, 0.10), rgba(255, 94, 91, 0.03));
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 14px;
+}
+
+.kofi-text {
+  min-width: 220px;
+  flex: 1 1 420px;
+}
+
+.kofi-text h2 {
+  margin: 0 0 3px;
+  color: var(--text);
+  font-size: 14px;
+  letter-spacing: 0.02em;
+}
+
+.kofi-text p {
+  margin: 0;
+  color: var(--text-dim);
+  font-size: 11.5px;
+  line-height: 1.55;
+}
+
+.kofi-btn {
+  flex: 0 0 auto;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 9px 16px;
+  border-radius: 999px;
+  background: #ff5e5b;
+  color: #fff;
+  font-size: 12.5px;
+  font-weight: 700;
+  text-decoration: none;
+  box-shadow: 0 4px 14px rgba(255, 94, 91, 0.22);
+  transition: background 0.12s, transform 0.12s;
+}
+
+.kofi-btn:hover {
+  background: #ff7471;
+  color: #fff;
+  transform: translateY(-1px);
+}
+
+.kofi-cup {
+  font-size: 15px;
+  line-height: 1;
+}
+
 /* --------------------------------------------------------------------- 弹层 */
 .modal {
   position: fixed;
@@ -2324,6 +2384,17 @@ html[lang^="pt"] .i18n-en {
     </div>
 
     <section class="results" id="results" aria-label="Calculation results" data-i18n-aria-label="resultsLabel"></section>
+
+    <section class="kofi" aria-labelledby="kofi-title">
+      <div class="kofi-text">
+        <h2 id="kofi-title" data-i18n="kofiTitle">Support the project</h2>
+        <p data-i18n="kofiText">If this calculator saves you time, you can buy me a coffee on Ko-fi. Donations are optional and help keep the tool maintained.</p>
+      </div>
+      <a class="kofi-btn" href="https://ko-fi.com/joemama0788" target="_blank" rel="noopener noreferrer">
+        <span class="kofi-cup" aria-hidden="true">☕</span>
+        <span data-i18n="kofiButton">Support on Ko-fi</span>
+      </a>
+    </section>
 
     <footer class="foot">
       <p data-i18n="footer1">Offline static page — just double-click index.html. No internet needed.</p>
@@ -3000,6 +3071,9 @@ window.FOX = {"generated":"2026-10-22","source":"https://foxhole.wiki.gg/ (Cargo
       resultsLabel: 'Calculation results',
       footer1: 'Offline static page — just double-click index.html. No internet needed.',
       footer2: 'Raw materials rounded up to whole units · Base recipes by default · Data source: foxhole.wiki.gg',
+      kofiTitle: 'Support the project',
+      kofiText: 'If this calculator saves you time, you can buy me a coffee on Ko-fi. Donations are optional and help keep the tool maintained.',
+      kofiButton: 'Support on Ko-fi',
       langLabel: 'Language',
       timeDay: 'd',
       timeHour: 'h',
@@ -3152,6 +3226,9 @@ window.FOX = {"generated":"2026-10-22","source":"https://foxhole.wiki.gg/ (Cargo
       resultsLabel: '计算结果',
       footer1: '离线静态页面，双击 index.html 即可使用，不需要联网。',
       footer2: '原始材料按整数向上取整 · 默认取基础配方 · 数据来源 foxhole.wiki.gg',
+      kofiTitle: '支持这个项目',
+      kofiText: '如果这个计算器节省了你的时间，可以在 Ko-fi 上请我喝杯咖啡。捐赠完全自愿，用于维护和更新工具。',
+      kofiButton: '在 Ko-fi 上支持',
       langLabel: '语言',
       timeDay: '天',
       timeHour: '小时',
@@ -3313,6 +3390,9 @@ window.FOX = {"generated":"2026-10-22","source":"https://foxhole.wiki.gg/ (Cargo
     resultsLabel: 'Результаты расчёта',
     footer1: 'Автономная статическая страница — просто откройте index.html. Интернет не нужен.',
     footer2: 'Сырьё округляется вверх до целых единиц · По умолчанию базовые рецепты · Источник данных: foxhole.wiki.gg',
+    kofiTitle: 'Поддержать проект',
+    kofiText: 'Если калькулятор экономит ваше время, вы можете угостить меня кофе на Ko-fi. Пожертвования добровольны и помогают поддерживать инструмент.',
+    kofiButton: 'Поддержать на Ko-fi',
     langLabel: 'Язык',
     timeDay: 'д',
     timeHour: 'ч',
@@ -3459,6 +3539,9 @@ window.FOX = {"generated":"2026-10-22","source":"https://foxhole.wiki.gg/ (Cargo
     resultsLabel: 'Berechnungsergebnisse',
     footer1: 'Offline-Statikseite — einfach index.html öffnen. Kein Internet nötig.',
     footer2: 'Rohmaterialien auf ganze Einheiten aufgerundet · Standardmäßig Basisrezepte · Datenquelle: foxhole.wiki.gg',
+    kofiTitle: 'Unterstütze das Projekt',
+    kofiText: 'Wenn dir dieser Rechner Zeit spart, kannst du mir auf Ko-fi einen Kaffee spendieren. Spenden sind freiwillig und helfen, das Tool zu pflegen.',
+    kofiButton: 'Auf Ko-fi unterstützen',
     langLabel: 'Sprache',
     timeDay: 'T',
     timeHour: 'Std',
@@ -3605,6 +3688,9 @@ window.FOX = {"generated":"2026-10-22","source":"https://foxhole.wiki.gg/ (Cargo
     resultsLabel: 'Résultats du calcul',
     footer1: 'Page statique hors ligne — ouvrez simplement index.html. Aucune connexion requise.',
     footer2: 'Matières premières arrondies à l’unité supérieure · Recettes de base par défaut · Source des données : foxhole.wiki.gg',
+    kofiTitle: 'Soutenir le projet',
+    kofiText: 'Si ce calculateur vous fait gagner du temps, vous pouvez m’offrir un café sur Ko-fi. Les dons sont facultatifs et aident à maintenir l’outil.',
+    kofiButton: 'Soutenir sur Ko-fi',
     langLabel: 'Langue',
     timeDay: 'j',
     timeHour: 'h',
@@ -3751,6 +3837,9 @@ window.FOX = {"generated":"2026-10-22","source":"https://foxhole.wiki.gg/ (Cargo
     resultsLabel: 'Resultados do cálculo',
     footer1: 'Página estática offline — basta abrir index.html. Não precisa de internet.',
     footer2: 'Matérias-primas arredondadas para unidades inteiras · Receitas base por padrão · Fonte dos dados: foxhole.wiki.gg',
+    kofiTitle: 'Apoie o projeto',
+    kofiText: 'Se esta calculadora economiza seu tempo, você pode me pagar um café no Ko-fi. As doações são opcionais e ajudam a manter a ferramenta.',
+    kofiButton: 'Apoiar no Ko-fi',
     langLabel: 'Idioma',
     timeDay: 'd',
     timeHour: 'h',
