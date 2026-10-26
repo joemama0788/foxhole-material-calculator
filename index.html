@@ -2852,22 +2852,20 @@ window.FOX = {"generated":"2026-10-22","source":"https://foxhole.wiki.gg/ (Cargo
       return { name: f.name, items: f.items, time: clean(f.time) };
     }).sort(function (a, b) { return b.time - a.time; });
 
-    // 固体资源按每种资源单独计算集装箱（各自向上取整）；液体每类单独占用
+    // 固体资源可混装：卡片保留每种资源的单独箱数，总计按固体总量计算
     var solidExact = 0;
-    var solidContainers = 0;
     var liquidContainers = 0;
     raw.forEach(function (r) {
       if (!r.container) return;
       if (r.container.kind === 'resource') {
         solidExact += r.exact;
-        solidContainers += r.container.count;
       } else {
         liquidContainers += r.container.count;
       }
     });
     var solidUnits = solidExact > 0 ? Math.ceil(round(solidExact, 6) - 1e-9) : 0;
     var containerTotals = {
-      resource: solidContainers,
+      resource: solidExact > 0 ? Math.ceil(round(solidExact, 6) / RESOURCE_CONTAINER_CAPACITY - 1e-9) : 0,
       resourceUnits: solidUnits,
       liquid: liquidContainers
     };
