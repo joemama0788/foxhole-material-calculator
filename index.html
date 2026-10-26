@@ -491,6 +491,100 @@ body.modal-open {
   outline: none;
 }
 
+/* ------------------------------------------------------- 军团广告位（占位） */
+.regiment-ads {
+  margin-top: 16px;
+  padding: 10px 12px 12px;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  background:
+    linear-gradient(180deg, rgba(240, 169, 59, 0.05), transparent 70%),
+    var(--panel);
+}
+
+.regiment-ads-head {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 6px;
+  margin-bottom: 8px;
+}
+
+.regiment-ads-title {
+  color: var(--amber);
+  font-size: 10.5px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+.regiment-ads-note {
+  color: var(--text-mute);
+  font-size: 9.5px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.regiment-ads-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 8px;
+}
+
+.ad-slot {
+  min-height: 76px;
+  padding: 9px 11px;
+  border: 1px dashed var(--amber-line);
+  border-radius: 8px;
+  background: rgba(240, 169, 59, 0.04);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 2px;
+}
+
+.ad-slot-tag {
+  color: var(--text-mute);
+  font-family: var(--mono);
+  font-size: 8.5px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.ad-slot-title {
+  color: var(--text);
+  font-size: 12px;
+  font-weight: 700;
+  line-height: 1.25;
+}
+
+.ad-slot-text {
+  color: var(--text-dim);
+  font-size: 10.5px;
+  line-height: 1.35;
+}
+
+.ad-slot-contact {
+  color: var(--amber);
+  font-size: 9.5px;
+  line-height: 1.3;
+}
+
+@media (max-width: 760px) {
+  .regiment-ads-grid {
+    display: flex;
+    overflow-x: auto;
+    padding-bottom: 2px;
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .ad-slot {
+    flex: 0 0 86%;
+    scroll-snap-align: start;
+  }
+}
+
 /* ------------------------------------------------------------------- 工作区 */
 .workspace {
   margin-top: 16px;
@@ -2356,6 +2450,33 @@ html[lang^="pt"] .i18n-en {
         <div class="search">
           <label class="sr-only" for="search" data-i18n="searchLabel">Search items (English or Chinese name)</label>
           <input type="search" id="search" class="search-input" placeholder="Search by English or Chinese name…" data-i18n-placeholder="searchPlaceholder" autocomplete="off" spellcheck="false" />
+        </div>
+      </div>
+    </section>
+
+    <section class="regiment-ads" aria-labelledby="regiment-ads-title">
+      <div class="regiment-ads-head">
+        <h2 class="regiment-ads-title" id="regiment-ads-title">Regiment Ads</h2>
+        <span class="regiment-ads-note">Advertisement · placeholder</span>
+      </div>
+      <div class="regiment-ads-grid">
+        <div class="ad-slot" data-ad-slot="regiment-1" aria-label="Regiment advertisement placeholder 1">
+          <span class="ad-slot-tag">Ad space</span>
+          <strong class="ad-slot-title">Your Regiment Here</strong>
+          <span class="ad-slot-text">Recruit members, promote operations, and share your Discord.</span>
+          <span class="ad-slot-contact">Contact joemama0788 on Discord</span>
+        </div>
+        <div class="ad-slot" data-ad-slot="regiment-2" aria-label="Regiment advertisement placeholder 2">
+          <span class="ad-slot-tag">Banner slot</span>
+          <strong class="ad-slot-title">Armored / Infantry / Logistics</strong>
+          <span class="ad-slot-text">Show your regiment banner to every calculator user.</span>
+          <span class="ad-slot-contact">Contact joemama0788 on Discord</span>
+        </div>
+        <div class="ad-slot" data-ad-slot="regiment-3" aria-label="Regiment advertisement placeholder 3">
+          <span class="ad-slot-tag">Recruitment slot</span>
+          <strong class="ad-slot-title">Recruitment Ad Slot</strong>
+          <span class="ad-slot-text">Feature your schedule, requirements, and enlistment link.</span>
+          <span class="ad-slot-contact">Contact joemama0788 on Discord</span>
         </div>
       </div>
     </section>
